@@ -9,7 +9,10 @@
 #define FORMAT(__v, __t) \
   ((__v) & (0xFFFFFFFFFFFFFFFF >> (64 - sizeof(__t) * 8)))
 
-using namespace com::sony::imaging::remote;
+namespace com {
+namespace sony {
+namespace imaging {
+namespace remote {
 
 static void strsprintf(std::string &str, const char *format, ...) {
   va_list ap;
@@ -458,3 +461,8 @@ template class SimpleArray<int32_t>;
 template class SimpleArray<uint32_t>;
 template class SimpleArray<int64_t>;
 template class SimpleArray<uint64_t>;
+
+}  // namespace remote
+}  // namespace imaging
+}  // namespace sony
+}  // namespace com
