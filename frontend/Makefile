@@ -19,6 +19,9 @@ ifneq (, $(findstring linux, $(SYS)))
 else ifneq (, $(findstring cygwin, $(SYS)))
 # Cygwin
 	SOURCES += socket_cygwin.cpp
+else ifneq (, $(findstring apple, $(SYS)))
+# macOS
+	SOURCES += socket.cpp
 else
 #	exit 1
 endif
